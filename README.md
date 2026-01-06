@@ -1,6 +1,6 @@
 # Smart Scholar - Deep Research 🧠📚
 
-**Smart Scholar** is an experimental, agentic deep-research assistant that coordinates multiple AI agents to plan searches, summarize findings, draft a detailed report, and optionally send the finished report via email. The project stitches together modular agents (Planner, Searcher, Writer, Emailer) orchestrated by a `ResearchManager` and exposes a simple Gradio UI for interactive use.
+**Smart Scholar** is an agentic deep-research assistant that coordinates multiple AI agents to plan searches, summarize findings, draft a detailed report, and optionally send the finished report via email. The project stitches together modular agents (Planner, Searcher, Writer, Emailer) orchestrated by a `ResearchManager` and exposes a simple Gradio UI for interactive use.
 
 ---
 
