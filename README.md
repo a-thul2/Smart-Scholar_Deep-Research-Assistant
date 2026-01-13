@@ -19,8 +19,7 @@
 You can try **Smart Scholar – Deep Research** live via Hugging Face Spaces:
 
 🔗 **Live Demo:**
-👉 [Smart Scholar - Deep Research Agent]((https://huggingface.co/spaces/athul8/Deep-Research-Agent))
-
+👉 https://huggingface.co/spaces/athul8/Deep-Research-Agent
 The demo provides the same end-to-end research workflow through a web interface, powered by the underlying agent architecture.
 
 ---
