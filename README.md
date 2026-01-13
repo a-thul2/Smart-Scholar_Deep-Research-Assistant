@@ -1,16 +1,47 @@
 # Smart Scholar - Deep Research 🧠📚
 
-**Smart Scholar** is an agentic deep-research assistant that coordinates multiple AI agents to plan searches, summarize findings, draft a detailed report, and optionally send the finished report via email. The project stitches together modular agents (Planner, Searcher, Writer, Emailer) orchestrated by a `ResearchManager` and exposes a simple Gradio UI for interactive use.
+**Smart Scholar** is an agentic deep-research assistant that coordinates multiple AI agents to plan searches, summarize findings, draft a detailed report, and sends the finished report via email. The project stitches together modular agents (Planner, Searcher, Writer, Emailer) orchestrated by a `ResearchManager` and exposes a simple Gradio UI for interactive use.
 
 ---
 
 ## 🚀 Features
 
-- Planner Agent: generates targeted web search queries based on your research question.
-- Search Agent: queries the web (via Serper API) and summarizes search results.
-- Writer Agent: synthesizes a long, structured markdown report from search summaries (Gemini model).
-- Email Agent: converts the report to HTML and sends it using SendGrid.
-- Lightweight Gradio UI for interactive research sessions.
+* Planner Agent: generates targeted web search queries based on your research question.
+* Search Agent: queries the web (via Serper API) and summarizes search results.
+* Writer Agent: synthesizes a long, structured markdown report from search summaries (Gemini model).
+* Email Agent: converts the report to HTML and sends it using SendGrid.
+* Lightweight Gradio UI for interactive research sessions.
+
+---
+
+## 🌐 Live Demo (Hugging Face Spaces)
+
+You can try **Smart Scholar – Deep Research** live via Hugging Face Spaces:
+
+🔗 **Live Demo:**
+👉 [Smart Scholar - Deep Research Agent]((https://huggingface.co/spaces/athul8/Deep-Research-Agent))
+
+The demo provides the same end-to-end research workflow through a web interface, powered by the underlying agent architecture.
+
+---
+
+## ⚠️ Important Notes & Limitations
+
+* The project currently uses the **Gemini API (Free Tier)**.
+* Due to **API rate limits**, the following may occasionally occur:
+
+  * The generated research report may be **incomplete**
+  * The pipeline may **fail or stop midway**
+* These issues are more likely when **multiple users access the Hugging Face Space simultaneously**, as free-tier API quotas are shared and limited.
+
+💡 **Reason:**
+Gemini free-tier APIs have strict request and token limits. When those limits are exceeded, responses may be truncated or requests may fail.
+
+📌 **Recommendation:**
+For stable and uninterrupted usage:
+
+* Run the project **locally** with your own API keys
+* Or upgrade to a **paid Gemini plan** if deploying for heavier or public usage
 
 ---
 
@@ -52,10 +83,11 @@ The Gradio UI will launch in your browser where you can enter a research query a
 
 ---
 
-Notes:
-- `GEMINI_API_KEY` is used via the OpenAI-compatible `AsyncOpenAI` client configured to a Gemini base URL.
-- `SERPER_API_KEY` is used for web search (Serper API).
-- `SENDGRID_API_KEY`, `FROM_EMAIL`, and `TO_EMAIL` are required if you want the Email agent to send reports.
+## 📝 Notes
+
+* `GEMINI_API_KEY` is used via the OpenAI-compatible `AsyncOpenAI` client configured to a Gemini base URL.
+* `SERPER_API_KEY` is used for web search (Serper API).
+* `SENDGRID_API_KEY`, `FROM_EMAIL`, and `TO_EMAIL` are required if you want the Email agent to send reports.
 
 ---
 
@@ -72,9 +104,9 @@ High-level flow:
 
 Files of interest:
 
-- `deep_research.py` — Gradio-backed demo UI
-- `research_manager.py` — Orchestration logic
-- `planner_agent.py`, `search_agent.py`, `writer_agent.py`, `email_agent.py` — Agent implementations
+* `deep_research.py` — Gradio-backed demo UI
+* `research_manager.py` — Orchestration logic
+* `planner_agent.py`, `search_agent.py`, `writer_agent.py`, `email_agent.py` — Agent implementations
 
 ---
 
@@ -97,8 +129,6 @@ asyncio.run(run_query("Best approaches to training Transformer models on small d
 
 ## 🧪 Development
 
-- Use a virtualenv or conda environment and the `requirements.txt` file.
-- Run linters/tests if present (add tests & CI as needed).
-- The code uses `dotenv` to load `.env` values during development.
-
----
+* Use a virtualenv or conda environment and the `requirements.txt` file.
+* Run linters/tests if present (add tests & CI as needed).
+* The code uses `dotenv` to load `.env` values during development.
